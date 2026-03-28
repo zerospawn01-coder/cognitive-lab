@@ -8,24 +8,30 @@
 - Includes: `post_alignment_lab/`, `intuition-layer/`, and the LEAP-related analysis path.
 - Excludes: early prototypes, one-off experiments, and governance/manual assets that belong in other repositories.
 
-## What Belongs Here
+## Non-goals
 
-- Research implementations that are still active.
-- Minimal reproducible tests for core behavior.
-- Analysis code that supports the main cognitive research line.
+- Holding unfinished prototypes that have not yet earned maintenance priority.
+- Serving as the default home for governance tooling or operational documentation.
+- Acting as a general archive for experiments that should remain in `lab-experiments`.
 
-## What Does Not Belong Here
+## Inputs
 
-- Archive-only experiments with no maintenance intent.
-- Operational runbooks and workflow manuals.
-- Governance/audit infrastructure whose main purpose is not cognitive research.
+- Promoted experiments that have shown repeatable value and deserve ongoing care.
+- Core research questions around alignment behavior, intuition, and LEAP-related analysis.
+- Regression fixes that preserve the reliability of the main cognitive line.
+
+## Outputs
+
+- Runnable research code with a stable repository boundary.
+- Reproducible tests for active components.
+- Results or implementations that can be cited as the current mainline state of the cognitive stack.
 
 ## Validation
 
 - `pytest -q`
 
-## Positioning
+## Promotion Path
 
-- Role: mainline repository
-- Maintenance level: ongoing
-- Promotion target: this is the default home for work that graduates out of `lab-experiments`
+- Inbound: mature work promoted out of `lab-experiments`.
+- Outbound: independent lines that deserve a separate repository should move out rather than remain bundled here.
+- Repository role: this is the default mainline home for Antigravity cognitive research.

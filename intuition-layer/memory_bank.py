@@ -1,5 +1,4 @@
 import numpy as np
-from sklearn.metrics.pairwise import cosine_similarity
 from collections import deque
 from dataclasses import dataclass
 from typing import List, Tuple
@@ -62,10 +61,7 @@ class FixedMemoryBank:
         embeddings = np.stack([m.embedding for m in self.memories])
         
         # コサイン類似度計算
-        similarities = cosine_similarity(
-            query_emb.reshape(1, -1), 
-            embeddings
-        )[0]
+        similarities = embeddings @ query_emb
         
         # Top-k取得
         top_k_indices = np.argsort(similarities)[-k:][::-1]

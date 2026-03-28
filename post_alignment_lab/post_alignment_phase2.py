@@ -1,6 +1,4 @@
 import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
 from enum import Enum
 from dataclasses import dataclass
 from typing import List, Dict, Any, Optional
@@ -186,6 +184,9 @@ class Phase2Agent:
 # --- Experiment 4: Branching Evolution ---
 
 def run_experiment_4_branching():
+    import pandas as pd
+    import matplotlib.pyplot as plt
+
     print("=== Experiment 4: Branching Evolution (Agent A vs B) ===")
     
     # Agent A: Resource Rich Environment

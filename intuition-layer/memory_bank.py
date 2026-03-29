@@ -31,6 +31,14 @@ class FixedMemoryBank:
             idx = hash(word) % 512
             vector[idx] += 1
         return vector / (np.linalg.norm(vector) + 1e-8)
+
+    def _normalize_embedding(self, embedding: np.ndarray) -> np.ndarray:
+        """任意の埋め込みをコサイン類似度向けに正規化"""
+        vector = np.asarray(embedding, dtype=float)
+        norm = np.linalg.norm(vector)
+        if norm <= 1e-8:
+            return vector
+        return vector / norm
     
     def add_episode(self, text: str, answer: str, importance: float):
         """エピソードを追加（重要度ベースで管理）"""
@@ -57,8 +65,10 @@ class FixedMemoryBank:
         if not self.memories:
             return []
         
-        query_emb = self.embed_fn(query)
-        embeddings = np.stack([m.embedding for m in self.memories])
+        query_emb = self._normalize_embedding(self.embed_fn(query))
+        embeddings = np.stack([
+            self._normalize_embedding(m.embedding) for m in self.memories
+        ])
         
         # コサイン類似度計算
         similarities = embeddings @ query_emb

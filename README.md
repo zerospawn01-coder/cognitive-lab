@@ -1,45 +1,37 @@
 # Cognitive Lab
 
-**Antigravity OS - Core Intelligence & LEAP Analysis Engine**
-
-Version: 1.0.0  
-License: Propriertary
-
----
-
-## Overview
-
-Cognitive Lab is the primary repository for Antigravity OS's core intelligence modules, including the LEAP (Linear Epistemic Action Projection) analysis engine and post-alignment research components. It focuses on deterministic reasoning and epistemic safety.
+`cognitive-lab` is the primary research repository for the Antigravity cognitive stack. It consolidates the active work around LEAP analysis, post-alignment behavior, and intuition-layer experimentation into a single maintainable codebase that is expected to keep passing tests and remain suitable for continued iteration.
 
 ## Scope
 
-- **Primary**: Core reasoning engines, LEAP analysis logic, and CI-backed critical path components.
-- **Secondary**: Post-alignment research simulations and intuition-layer telemetry.
+- Primary: core research code that should stay runnable, testable, and worth maintaining.
+- Includes: `post_alignment_lab/`, `intuition-layer/`, and the LEAP-related analysis path.
+- Excludes: early prototypes, one-off experiments, and governance/manual assets that belong in other repositories.
 
-## Promotion Rules
+## Non-goals
 
-- **Development**: Changes to LEAP core must pass a full chaos sweep (E=0.00 to 0.30) with zero epistemic collapse.
-- **Production**: Requires 100% test coverage for all `post_alignment_engine` state transitions.
+- Holding unfinished prototypes that have not yet earned maintenance priority.
+- Serving as the default home for governance tooling or operational documentation.
+- Acting as a general archive for experiments that should remain in `lab-experiments`.
 
-## Run Commands
+## Inputs
 
-- **LEAP Analysis**: `python leap_analysis/run_leap_analysis.py`
-- **Test Core**: `pytest leap_analysis/test_leap_analysis.py`
+- Promoted experiments that have shown repeatable value and deserve ongoing care.
+- Core research questions around alignment behavior, intuition, and LEAP-related analysis.
+- Regression fixes that preserve the reliability of the main cognitive line.
 
-## Ownership
+## Outputs
 
-- **Lead**: @zerospawn01-coder (Chief Architect)
-- **Support**: Antigravity OS Core Research Group
+- Runnable research code with a stable repository boundary.
+- Reproducible tests for active components.
+- Results or implementations that can be cited as the current mainline state of the cognitive stack.
 
----
+## Validation
 
-## Components
+- `pytest -q`
 
-- **LEAP Engine (`leap_analysis/`)**: Quantitative measurement of cognitive drift and epistemic stability.
-- **Post-Alignment Lab (`post_alignment_lab/`)**: Experiments in agentic self-correction.
-- **Intuition Layer (`intuition-layer/`)**: Heuristic-based fast dispatch logic.
+## Promotion Path
 
-## Status
-
-**Current Status**: Active (v1.0.0)  
-**Security**: Gated by SVP Transaction Protocol.
+- Inbound: mature work promoted out of `lab-experiments`.
+- Outbound: independent lines that deserve a separate repository should move out rather than remain bundled here.
+- Repository role: this is the default mainline home for Antigravity cognitive research.

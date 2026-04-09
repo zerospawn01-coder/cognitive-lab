@@ -29,6 +29,17 @@
 ## Validation
 
 - `pytest -q`
+- `python tools/ci_gate.py validate-leap-analysis`
+- `python tools/ci_gate.py validate-post-alignment-lab`
+- `python tools/ci_gate.py validate-intuition-layer`
+- `python tools/ci_gate.py validate-governance`
+- `python tools/ci_gate.py unit-tests`
+
+## CI Gates
+
+- Required checks should be set to the workflow job names: `validate-leap-analysis`, `validate-post-alignment-lab`, `validate-intuition-layer`, `validate-governance`, and `unit-tests`.
+- Every gate is fail-closed and emits structured `PASS` or `FAIL` JSON. There is no warning path.
+- Auto-merge should only be enabled after all required checks are green.
 
 ## Promotion Path
 
